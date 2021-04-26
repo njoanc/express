@@ -13,9 +13,11 @@ app.get("/", function (req, res) {
 });
 
 app.get("/json", function (req, res) {
-  res.json({
-    message: "Hello json",
-  });
+  if (process.env.MESSAGE_STYLE == "allCaps") {
+    res = "Hello World".toUpperCase;
+  } else {
+    res = "Hello World";
+  }
 });
 
 module.exports = app;
