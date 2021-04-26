@@ -1,9 +1,7 @@
 var express = require("express");
 var app = express();
 require("dotenv").config();
-// app.get("/", function (req, res) {
-//   res.send("Hello Express");
-// });
+
 app.use(express.static(__dirname + "/public"));
 // Assets at the /public route
 app.use("/public", express.static(__dirname + "/public"));
