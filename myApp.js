@@ -12,12 +12,10 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
 
-app.get("/json", function (req, res) {
-  if (process.env.MESSAGE_STYLE === "uppercase") {
-    res.json({ message: "HELLO WORLD" });
-  } else {
-    res.json({ message: "Hello World" });
-  }
+app.get("/json", (req, res) => {
+  process.env.MESSAGE_STYLE === "uppercase"
+    ? res.json({ message: "HELLO JSON" })
+    : res.json({ message: "Hello json" });
 });
 
 module.exports = app;
