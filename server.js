@@ -31,7 +31,7 @@ var port = process.env.PORT || 3000;
 bGround.setupBackgroundApp(app, myApp, __dirname).listen(port, function () {
   bGround.log("Node is listening on port " + port + "...");
 });
-app.get(port, function (req, res) {
+app.get("/", function (req, res) {
   res.send("Hello Express");
 });
 
