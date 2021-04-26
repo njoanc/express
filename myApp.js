@@ -5,6 +5,8 @@ var app = express();
 //   res.send("Hello Express");
 // });
 
-app.get("/", __dirname + views / index.html);
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/views/index.html");
+});
 
 module.exports = app;
